@@ -1,0 +1,23 @@
+table, td {
+    border: 5px solid black;
+    margin:auto;
+}
+#restart {
+  margin-left:40%;
+}
+#info {
+  margin-right:30%;
+}
+td{
+    width:100px;
+    height:100px;
+    text-align:center;
+    background-color: #007EFF;
+      border-radius: 15%;
+}
+#restart:hover {
+  background-color:#007EFF;
+  color: #FFFFFF;
+
+
+}
