@@ -30,6 +30,7 @@ function playGame(){
         this.style.background = "#007EFF";
     });
     card.addEventListener('click', function(){
+      if (ready == false) return;
       if (this.clicked == false && this.completed == false) {
       startTimer();
       openCards.push(this);
@@ -45,10 +46,14 @@ function playGame(){
 
           }
         } else {
+          ready = false;
+          document.getElementById("gridTable").style.border = "5px solid red";
           setTimeout(function(){
             hide(openCards[0]);
             hide(openCards[1]);
             openCards = [];
+            ready = true;
+            document.getElementById("gridTable").style.border = "5px solid black";
           }, 750);
 
     };
