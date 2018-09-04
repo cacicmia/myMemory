@@ -21,6 +21,9 @@ function playGame(){
     card.completed= false;
     card.clicked= false;
     card.value=cards[i];
+    document.getElementById('restart').addEventListener('click', function(){
+    location.reload();
+});
     card.addEventListener('mouseenter', function(){
       if (this.completed == false && this.clicked == false)
         this.style.background = "#FF9200";
@@ -29,6 +32,12 @@ function playGame(){
       if (this.completed == false && this.clicked == false)
         this.style.background = "#007EFF";
     });
+    document.addEventListener('keydown', function(event){
+    if(event.key > 0 && event.key < 10 ){
+        grid[event.key - 1].click();
+    }
+
+});
     card.addEventListener('click', function(){
       if (ready == false) return;
       if (this.clicked == false && this.completed == false) {
